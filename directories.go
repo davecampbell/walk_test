@@ -67,12 +67,15 @@ func main() {
     check(err)
 
     cnt=0
-    max, err=strconv.Atoi(os.Args[1])
+    max, err = strconv.Atoi(os.Args[2])
     if err != nil {
         fmt.Println("something amiss with args.")
     }
 
-    err = os.Chdir("/home/dave/tempmusic")
+    var startpath string
+    startpath = os.Args[1]
+
+    err = os.Chdir(startpath)
     check(err)
 
     fmt.Println("Visiting...")
